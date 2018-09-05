@@ -1,5 +1,7 @@
 # GRIX - a sass flexbox-grid mixin tool
 
+Download grix.scss file, or copy the code inside, and put it in your assets folder or mixin file.
+
 ### HTML
 ```HTML
 <div class="grid">
