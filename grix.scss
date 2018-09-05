@@ -1,0 +1,25 @@
+/* 
+* GRIX v1.0.0
+* @author Eduardo Moreno - eduardocmoreno[at]gmail[dot]com
+* https://github.com/eduardocmoreno/grix
+*/
+@mixin grid($cols, $gap, $width: flex){
+  display: flex;
+  flex-wrap: wrap;
+  $wCalc: calc(#{100% / $cols} - #{($cols - 1) * $gap / $cols});
+  & > *{
+    display: flex;
+    @if $width == fixed {
+      width: $wCalc;
+    } @else if $width == flex {
+      flex: $wCalc;
+    }
+    margin: $gap 0 0 $gap;
+    &:nth-child(-n+#{$cols}){
+      margin-top: 0;
+    }
+    &:nth-child(#{$cols}n+1){
+      margin-left: 0;
+    }
+  }
+}
